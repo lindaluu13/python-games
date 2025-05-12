@@ -1,0 +1,12 @@
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers spécifiques à l'OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
