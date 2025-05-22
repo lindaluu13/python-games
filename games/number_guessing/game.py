@@ -3,6 +3,7 @@ import time
 from .utils import ask_guess, check_guess, MAX_ATTEMPTS
 
 def play():
+    print("Welcome to the Number Guessing game!")
     fair_price = random.randint(1, 100)
     attempts = 0
     start_time = time.time()
