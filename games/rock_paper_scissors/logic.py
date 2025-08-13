@@ -1,11 +1,15 @@
 import random
 
-choices = ["r", "p", "s"]
+ROCK = "r"
+PAPER = "p"
+SCISSORS = "s"
+
+choices = [ROCK, PAPER, SCISSORS]
 
 emoji_map = {
-    "r": "🪨",
-    "p": "📄",
-    "s": "✂️"
+    ROCK: "🪨",
+    PAPER: "📄",
+    SCISSORS: "✂️"
 }
 
 
@@ -42,9 +46,9 @@ def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         print("It's a draw")
     if (
-        (user_choice == "r" and computer_choice == "s") or
-        (user_choice == "s" and computer_choice == "p") or
-        (user_choice == "p" and computer_choice == "r")
+        (user_choice == ROCK and computer_choice == SCISSORS) or
+        (user_choice == SCISSORS and computer_choice == PAPER) or
+        (user_choice == PAPER and computer_choice == ROCK)
     ):
         print("YOU WOOOON!!! Congrats!")
     print("You lost :( Try again!")
