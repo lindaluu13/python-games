@@ -1,34 +1,19 @@
-from .logic import get_computer_choice, determine_winner, InvalidChoiceError, choices, emoji_map
+from .logic import get_computer_choice, get_user_choice, display_choices, determine_winner
 
 
 def play():
     """Play Rock, Paper, Scissors"""
     print("Welcome to Rock, Paper, Scissors!")
     while True:
-        try:
-            computer = get_computer_choice()
+        computer_choice = get_computer_choice()
 
-            player = input("Choose rock, paper or scissors: ").lower()
-            if player not in choices:
-                raise InvalidChoiceError(f"'{player}' is not a valid choice.")
+        user_choice = get_user_choice()
 
-            print(f"You chose: {player} {emoji_map[player]}")
-            print(f"Computer chose: {computer} {emoji_map[computer]}")
+        display_choices(user_choice, computer_choice)
 
-            result = determine_winner(player, computer)
+        determine_winner(user_choice, computer_choice)
 
-            if result == "draw":
-                print("It's a draw")
-            elif result == "computer":
-                print("You lost :( Try again!")
-            else:
-                print("YOU WOOOON!!! Congrats!")
-
-            play_again = input("Play again ? (y/n): ").lower()
-            if play_again != 'y':
-                print("Thanks for playing! See you soon!")
-                break
-
-        except InvalidChoiceError as e:
-            print(
-                f"Invalid input: {e}. Please choose rock, paper or scissors.")
+        play_again = input("Play again ? (y/n): ").lower()
+        if play_again == 'n':
+            print("Thanks for playing! See you soon!")
+            break
