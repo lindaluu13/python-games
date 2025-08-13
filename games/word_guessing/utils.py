@@ -1,9 +1,11 @@
 import random
 from ..words import word_list
 
+
 def get_random_word() -> str:
     """Return a random word from the list."""
     return random.choice(word_list).upper()
+
 
 def ask_guess() -> str:
     """Ask the user for a single letter guess."""

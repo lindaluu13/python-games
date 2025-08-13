@@ -1,15 +1,17 @@
 from .logic import get_computer_choice, determine_winner, InvalidChoiceError, choices, emoji_map
 
+
 def play():
+    """Play Rock, Paper, Scissors"""
     print("Welcome to Rock, Paper, Scissors!")
     while True:
         try:
             computer = get_computer_choice()
 
             player = input("Choose rock, paper or scissors: ").lower()
-            if player not in choices: 
+            if player not in choices:
                 raise InvalidChoiceError(f"'{player}' is not a valid choice.")
-            
+
             print(f"You chose: {player} {emoji_map[player]}")
             print(f"Computer chose: {computer} {emoji_map[computer]}")
 
@@ -26,6 +28,7 @@ def play():
             if play_again != 'y':
                 print("Thanks for playing! See you soon!")
                 break
-            
+
         except InvalidChoiceError as e:
-            print(f"Invalid input: {e}. Please choose rock, paper or scissors.")
+            print(
+                f"Invalid input: {e}. Please choose rock, paper or scissors.")

@@ -1,6 +1,8 @@
 from .utils import get_random_word, ask_guess
 
+
 def play():
+    """Play Word Guessing"""
     word_to_guess = get_random_word()
     hidden_word = ["_"] * len(word_to_guess)
     guessed_letters = set()

@@ -1,5 +1,6 @@
 MAX_ATTEMPTS = 7
 
+
 def ask_guess():
     """Ask the user for a number between 1 and 100."""
     while True:
@@ -12,12 +13,13 @@ def ask_guess():
         except ValueError:
             print("Invalid input. Try again.")
 
-def check_guess(guess, fair_price):
+
+def check_guess(guess, number_to_guess):
     """Compare guess with the correct number and give feedback."""
-    if guess > fair_price:
+    if guess > number_to_guess:
         print("Too high!")
         return False
-    elif guess < fair_price:
+    elif guess < number_to_guess:
         print("Too low!")
         return False
     else:

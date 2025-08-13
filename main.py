@@ -1,6 +1,8 @@
 from games import number_guessing, rock_paper_scissors, hangman, word_guessing
 
+
 def main():
+    """Calls play() from each games"""
     print("Choose a game:")
     print("1. Number Guessing")
     print("2. Rock, Paper, Scissor")
